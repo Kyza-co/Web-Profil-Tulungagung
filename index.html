@@ -1,153 +1,436 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Kabupaten Tulungagung</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header>
-        <img src="img/Lambang-tulungagung.png">
-        <h1>Profil Kabupaten Tulungagung</h1>
-        <p>Kota Marmer - Jawa Timur</p>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#beranda" class="logo">
+                Tulungagung
+            </a>
+            <nav class="nav-menu">
+                <a href="#beranda">Beranda</a>
+                <a href="#profil">Profil</a>
+                <a href="#sejarah">Sejarah</a>
+                <a href="#wisata">Wisata</a>
+                <a href="#budaya">Budaya</a>
+                <a href="#kuliner">Kuliner</a>
+                <a href="#potensi">Potensi</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Navigasi -->
-    <nav>
-        <h2>Menu Navigasi</h2>
-        <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#sejarah">Sejarah</a></li>
-            <li><a href="#geografis">Geografis</a></li>
-            <li><a href="#pemerintah">Pemerintahan</a></li>
-            <li><a href="#ekonomi">Potensi Ekonomi</a></li>
-            <li><a href="#pariwisata">Pariwana</a></li>
-            <li><a href="https://www.dicoding.com/users/samzaazh/academies">Profil Dicoding Saya</a></li>
-        </ul>
-    </nav>
+    <section id="beranda" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="eyebrow">KABUPATEN DI JAWA TIMUR</p>
+                <h1>
+                    Selamat Datang<br>
+                    di Kabupaten<br>
+                    Tulungagung
+                </h1>
+                <p class="hero-description">
+                    Mengenal lebih dekat sejarah, budaya, wisata,
+                    dan potensi Kabupaten Tulungagung.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#profil" class="button button-primary">
+                        Jelajahi Tulungagung
+                    </a>
+                    <a href="#wisata" class="button button-outline">
+                        Lihat Wisata
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/hero-tulungagung.jpg" alt="Pemandangan Kabupaten Tulungagung">
+            </div>
+        </div>
+    </section>
 
-    <!-- Main Content -->
-    <div class="container">
-    <main>
-        <h2>Gambaran Umum</h2>
-        <p>Kabupaten Tulung Agung merupakan salah satu kabupaten di Provinsi Jawa Timur yang terletak di bagian selatan Pulau Jawa. Kabupaten ini terkenal dengan julukan "Kota Marmer" karena menjadi salah satu penghasil marmer terbesar di Indonesia. Selain itu, Tulung Agung juga dikenal memiliki pantai-pantai indah, budaya yang khas, serta potensi pertanian dan industri yang berkembang pesat.</p>
+    <section id="profil" class="section section-light">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">01 — PROFIL</p>
+                <h2>Profil Kabupaten Tulungagung</h2>
+            </div>
+            <div class="profile-layout">
+                <div class="profile-text">
+                    <p>
+                        Kabupaten Tulungagung merupakan salah satu kabupaten
+                        yang berada di Provinsi Jawa Timur. Wilayah ini memiliki
+                        kekayaan alam, budaya, dan potensi ekonomi yang beragam.
+                    </p>
+                    <p>
+                        Tulungagung dikenal dengan berbagai potensi daerah,
+                        mulai dari pertanian, perikanan, pariwisata, hingga
+                        industri marmer dan kerajinan.
+                    </p>
+                    <p>
+                        Dengan keberagaman tersebut, Tulungagung menjadi daerah
+                        yang memiliki karakter budaya dan potensi ekonomi yang
+                        menarik untuk dikenal lebih jauh.
+                    </p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span>Provinsi</span>
+                        <strong>Jawa<br>Timur</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Luas Wilayah</span>
+                        <strong>1.055,65</strong>
+                        <small>km²</small>
+                    </div>
+                    <div class="stat-card">
+                        <span>Kecamatan</span>
+                        <strong>19</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Wilayah Administratif</span>
+                        <strong>257 Desa</strong>
+                        <small>14 Kelurahan</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Article 1: Sejarah -->
-        <article>
-            <h2 id="sejarah">Sejarah Singkat</h2>
-            <p>Hari jadi Kabupaten Tulung Agung diperingati setiap 18 November 1205, berdasarkan Prasasti Lawadan pada masa Kerajaan Daha/Kediri. Dahulu wilayah ini dikenal dengan nama Ngrowo, karena sebagian besar daerahnya berupa rawa dan sering tergenang air. Nama "Tulung Agung" dipercaya berasal dari kata tulung yang berarti pertolongan dan agung yang berarti besar.</p>
-        </article>
+    <section id="sejarah" class="section">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">02 — SEJARAH</p>
+                <h2>
+                    Sejarah dan Asal-usul Nama Tulungagung
+                </h2>
+                <p>
+                    Mengenal perjalanan sejarah dan berbagai cerita
+                    mengenai asal-usul nama Kabupaten Tulungagung.
+                </p>
+            </div>
+            <div class="history-cards">
+                <article class="history-card">
+                    <h3>Kisah Joko Baru</h3>
+                    <p>
+                        Salah satu cerita yang berkembang di masyarakat
+                        mengenai asal-usul nama Tulungagung berkaitan
+                        dengan kisah Joko Baru dan perjalanan wilayah
+                        Tulungagung pada masa lampau.
+                    </p>
+                </article>
+                <article class="history-card">
+                    <h3>Tulungagung dan Wilayah Ngrowo</h3>
+                    <p>
+                        Wilayah Tulungagung pada masa lalu juga berkaitan
+                        dengan kawasan yang dikenal sebagai Ngrowo.
+                        Perkembangan wilayah tersebut menjadi bagian
+                        dari perjalanan sejarah Tulungagung.
+                    </p>
+                </article>
+            </div>
+            <div class="timeline">
+                <h3 style="margin-bottom: 25px;">Jejak Sejarah</h3>
+                <div class="timeline-item">
+                    <span>1205</span>
+                    <h3>Prasasti Lawadan</h3>
+                    <p>
+                        Peristiwa yang berkaitan dengan sejarah
+                        awal Kabupaten Tulungagung.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span>2003</span>
+                    <h3>Penetapan Hari Jadi</h3>
+                    <p>
+                        Penetapan Hari Jadi Kabupaten Tulungagung.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Article 2: Geografis -->
-        <article>
-            <h2 id="geografis">Letak Geografis</h2>
-            <p>Kabupaten Tulung Agung berada pada koordinat 111°43'–112°07' Bujur Timur dan 7°51'–8°18' Lintang Selatan dengan luas wilayah sekitar 1.055–1.150 km².</p>
-            
-            <h3>Batas Wilayah</h3>
-            <ul>
-                <li>Sebelah Utara: Kabupaten Kediri</li>
-                <li>Sebelah Timur: Kabupaten Blitar</li>
-                <li>Sebelah Barat: Kabupaten Trenggalek</li>
-                <li>Sebelah Selatan: Samudra Hindia</li>
-            </ul>
-            <p>Kabupaten ini memiliki wilayah dataran rendah di bagian tengah dan utara serta kawasan pegunungan kapur dan pesisir pantai di bagian selatan.</p>
-        </article>
+    <section id="wisata" class="section section-light">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">03 — WISATA</p>
+                <h2>Wisata Tulungagung</h2>
+                <p>
+                    Tulungagung memiliki beragam destinasi wisata
+                    alam dan budaya yang menarik untuk dikunjungi.
+                </p>
+            </div>
+            <div class="tourism-grid">
+                <article class="tourism-card">
+                    <div class="tourism-image">
+                        <img src="img/wisata-pantai-popoh.jpg" alt="Pantai Popoh Tulungagung">
+                    </div>
+                    <div class="tourism-content">
+                        <h3>Pantai Popoh</h3>
+                        <p>
+                            Salah satu destinasi wisata pantai
+                            di kawasan Tulungagung.
+                        </p>
+                    </div>
+                </article>
+                <article class="tourism-card">
+                    <div class="tourism-image">
+                        <img src="img/wisata-pantai-gemah.jpg" alt="Pantai Gemah Tulungagung">
+                    </div>
+                    <div class="tourism-content">
+                        <h3>Pantai Gemah</h3>
+                        <p>
+                            Destinasi wisata pesisir dengan
+                            panorama pantai yang menarik.
+                        </p>
+                    </div>
+                </article>
+                <article class="tourism-card">
+                    <div class="tourism-image">
+                        <img src="img/wisata-kedung-tumpang.jpg" alt="Kedung Tumpang Tulungagung">
+                    </div>
+                    <div class="tourism-content">
+                        <h3>Pantai Kedung Tumpang</h3>
+                        <p>
+                            Destinasi pesisir dengan karakter
+                            bebatuan dan kolam alami.
+                        </p>
+                    </div>
+                </article>
+                <article class="tourism-card">
+                    <div class="tourism-image">
+                        <img src="img/wisata-waduk-wonorejo.jpg" alt="Waduk Wonorejo Tulungagung">
+                    </div>
+                    <div class="tourism-content">
+                        <h3>Waduk Wonorejo</h3>
+                        <p>
+                            Kawasan waduk dengan pemandangan
+                            alam yang menarik.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-        <!-- Article 3: Pemerintahan -->
-        <article>
-            <h2 id="pemerintah">Pemerintahan dan Administrasi</h2>
-            <p>Kabupaten Tulung Agung terdiri dari:</p>
-            <ul>
-                <li>19 kecamatan</li>
-                <li>257 desa</li>
-                <li>14 kelurahan</li>
-            </ul>
-            <p>Pusat pemerintahan berada di Kecamatan Tulung Agung.</p>
-        </article>
+    <section id="budaya" class="section section-dark">
+        <div class="container">
+            <div class="section-heading heading-light">
+                <p class="eyebrow">04 — BUDAYA</p>
+                <h2>Budaya Tulungagung</h2>
+                <p>
+                    Mengenal tradisi, seni, dan warisan budaya
+                    yang menjadi identitas masyarakat Tulungagung.
+                </p>
+            </div>
+            <div class="culture-feature">
+                <div class="culture-feature-image">
+                    <img src="img/budaya-royog-kendang.jpg" alt="Reyog Kendang Tulungagung">
+                </div>
+                <div class="culture-feature-content">
+                    <span>KESENIAN UTAMA</span>
+                    <h3>Reyog Kendang</h3>
+                    <p>
+                        Salah satu kesenian khas Tulungagung yang
+                        menggunakan kendang sebagai bagian utama
+                        pertunjukan.
+                    </p>
+                </div>
+            </div>
+            <div class="culture-grid">
+                <article class="culture-card">
+                    <div class="culture-card-image">
+                        <img src="img/budaya-jaranan.jpg" alt="Jaranan Tulungagung">
+                    </div>
+                    <div class="culture-card-content">
+                        <h4>Jaranan Senterewe</h4>
+                        <p>
+                            Kesenian tradisional yang memadukan
+                            unsur gerak dan musik.
+                        </p>
+                    </div>
+                </article>
+                <article class="culture-card">
+                    <div class="culture-card-image">
+                        <img src="img/budaya-tiban.jpg" alt="Tiban Tulungagung">
+                    </div>
+                    <div class="culture-card-content">
+                        <h4>Tiban</h4>
+                        <p>
+                            Tradisi masyarakat yang menjadi
+                            bagian dari kebudayaan daerah.
+                        </p>
+                    </div>
+                </article>
+                <article class="culture-card">
+                    <div class="culture-card-image">
+                        <img src="img/budaya-ulur-ulur.jpg" alt="Ulur-ulur Tulungagung">
+                    </div>
+                    <div class="culture-card-content">
+                        <h4>Ulur-Ulur</h4>
+                        <p>
+                            Upacara adat masyarakat yang
+                            menjadi bagian tradisi setempat.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-        <!-- Article 4: Penduduk -->
-        <article>
-            <h2>Penduduk</h2>
-            <p>Jumlah penduduk Kabupaten Tulung Agung mencapai lebih dari 1,1 juta jiwa. Mayoritas penduduk berasal dari suku Jawa dan menggunakan bahasa Jawa dialek Mataraman dalam kehidupan sehari-hari. Mayoritas masyarakat memeluk agama Islam dengan kehidupan sosial yang cukup religius dan harmonis.</p>
-        </article>
+    <section id="kuliner" class="section">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">05 — KULINER</p>
+                <h2>Kuliner Tulungagung</h2>
+                <p>
+                    Beragam kuliner khas yang mencerminkan
+                    cita rasa dan tradisi masyarakat Tulungagung.
+                </p>
+            </div>
+            <div class="food-grid">
+                <article class="food-card">
+                    <div class="food-image">
+                        <img src="img/kuliner-ayam-lodho.jpg" alt="Ayam Lodho Tulungagung">
+                    </div>
+                    <div class="food-content">
+                        <h3>Ayam Lodho</h3>
+                        <p>
+                            Hidangan khas dengan cita rasa
+                            gurih dan bumbu yang kuat.
+                        </p>
+                    </div>
+                </article>
+                <article class="food-card">
+                    <div class="food-image">
+                        <img src="img/kuliner-nasi-pecel.jpg" alt="Nasi Pecel Tulungagung">
+                    </div>
+                    <div class="food-content">
+                        <h3>Nasi Pecel</h3>
+                        <p>
+                            Hidangan yang terdiri dari nasi,
+                            sayuran, dan sambal pecel.
+                        </p>
+                    </div>
+                </article>
+                <article class="food-card">
+                    <div class="food-image">
+                        <img src="img/kuliner-kletek.jpg" alt="Kletek Tulungagung">
+                    </div>
+                    <div class="food-content">
+                        <h3>Kletek</h3>
+                        <p>
+                            Salah satu kuliner tradisional
+                            yang dapat ditemukan di Tulungagung.
+                        </p>
+                    </div>
+                </article>
+                <article class="food-card">
+                    <div class="food-image">
+                        <img src="img/kuliner-kopi-cethe.jpg" alt="Kopi Cethe Tulungagung">
+                    </div>
+                    <div class="food-content">
+                        <h3>Kopi Cethe</h3>
+                        <p>
+                            Kopi khas yang memiliki budaya
+                            penyajian unik di masyarakat.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-        <!-- Article 5: Potensi Ekonomi -->
-        <article>
-            <h2 id="ekonomi">Potensi Ekonomi</h2>
-            <p>Perekonomian Tulung Agung didukung oleh beberapa sektor utama, antara lain:</p>
-            
-            <h3>1. Industri Marmer</h3>
-            <p>Tulung Agung dikenal sebagai pusat industri marmer terbesar di Jawa Timur, terutama di daerah Campurdarat. Produk marmer Tulung Agung telah dipasarkan hingga luar negeri.</p>
-            
-            <h3>2. Pertanian</h3>
-            <p>Hasil pertanian utama meliputi:</p>
-            <ul>
-                <li>Padi</li>
-                <li>Tebu</li>
-                <li>Kakao</li>
-                <li>Tembakau</li>
-                <li>Kelapa</li>
-            </ul>
-            
-            <h3>3. Perikanan dan Kelautan</h3>
-            <p>Wilayah pesisir selatan menghasilkan berbagai jenis ikan laut dan mendukung sektor wisata bahari.</p>
-        </article>
+    <section id="potensi" class="section section-light">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">06 — POTENSI DAERAH</p>
+                <h2>Potensi Daerah</h2>
+                <p>
+                    Tulungagung memiliki berbagai potensi ekonomi
+                    dan sumber daya yang dapat terus dikembangkan.
+                </p>
+            </div>
+            <div class="potential-grid">
+                <article class="potential-card">
+                    <span class="potential-number">01</span>
+                    <h3>Pertanian</h3>
+                    <p>
+                        Potensi pertanian menjadi salah satu
+                        sumber penghidupan masyarakat.
+                    </p>
+                </article>
+                <article class="potential-card">
+                    <span class="potential-number">02</span>
+                    <h3>Perikanan</h3>
+                    <p>
+                        Potensi perikanan darat maupun laut
+                        terus dikembangkan.
+                    </p>
+                </article>
+                <article class="potential-card">
+                    <span class="potential-number">03</span>
+                    <h3>Industri & Kerajinan</h3>
+                    <p>
+                        Industri dan kerajinan menjadi salah
+                        satu potensi ekonomi daerah.
+                    </p>
+                </article>
+                <article class="potential-card">
+                    <span class="potential-number">04</span>
+                    <h3>Pariwisata & Ekonomi Kreatif</h3>
+                    <p>
+                        Kekayaan alam dan budaya mendukung
+                        perkembangan sektor pariwisata.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-        <!-- Article 6: Pariwana -->
-        <article>
-            <h2 id="pariwisata">Pariwana</h2>
-            <p>Kabupaten Tulung Agung memiliki banyak destinasi wisata alam dan budaya.</p>
-            
-            <h3>Wisata Pantai</h3>
-            <ul>
-                <li>Pantai Popoh</li>
-                <li>Pantai Gemah</li>
-                <li>Pantai Kedung Tumpang</li>
-                <li>Pantai Sine</li>
-            </ul>
-            
-            <h3>Wisata Sejarah dan Budaya</h3>
-            <ul>
-                <li>Candi Sanggrahan</li>
-                <li>Candi Dadi</li>
-                <li>Kerajinan marmer Campurdarat</li>
-                <li>Alun-alun Tulung Agung</li>
-            </ul>
-            
-            <h3>Budaya dan Kesenian</h3>
-            <p>Budaya masyarakat Tulung Agung masih sangat kental dengan tradisi Jawa. Beberapa kesenian tradisional yang masih dilestarikan antara lain:</p>
-            <ul>
-                <li>Jaranan</li>
-                <li>Campursari</li>
-                <li>Wayang kulit</li>
-                <li>Reog Kendang khas Tulung Agung</li>
-            </ul>
-        </article>
-
-        <!-- Article 7: Kesimpulan -->
-        <article>
-            <h2>Kesimpulan</h2>
-            <p>Kabupaten Tulung Agung merupakan daerah yang kaya akan sejarah, budaya, dan potensi alam. Julukan sebagai "Kota Marmer" menjadikan Tulung Agung terkenal di tingkat nasional. Dengan kekayaan wisata pantai, industri kreatif, dan budaya lokal yang kuat, Tulung Agung menjadi salah satu kabupaten penting di wilayah selatan Jawa Timur.</p>
-        </article>
-    </main>
-
-    <!-- Aside -->
-    <aside>
-        <h2>Tentang Penyusun</h2>
-        <!-- Ganti src dengan URL foto Anda sendiri -->
-        <img src="img/169386.jpg" alt="Foto Penyusun" width="150">
-        <p><strong>Nama:</strong> Samhan Zaky Azhari</p>
-        <p><strong>Email:</strong> zakyzhari@gmail.com</p>
-        <p><strong>Asal:</strong> Tulung Agung, Jawa Timur</p>
-    </aside>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 - Profil Kabupaten Tulungagung, Alamat: Sukorejo-Karangrejo-Tulungagung </p>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Tulungagung</h3>
+                <p>
+                    Jelajahi sejarah, budaya, wisata,
+                    dan berbagai potensi Kabupaten Tulungagung.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#sejarah">Sejarah</a></li>
+                    <li><a href="#wisata">Wisata</a></li>
+                    <li><a href="#budaya">Budaya</a></li>
+                    <li><a href="#kuliner">Kuliner</a></li>
+                    <li><a href="#potensi">Potensi</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Tentang Website</h4>
+                <p>
+                    Website profil Kabupaten Tulungagung
+                    sebagai media informasi mengenai daerah,
+                    budaya, wisata, dan potensi lokal.
+                </p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>
+                © 2026 Profil Kabupaten Tulungagung
+            </p>
+            <p>
+                Website Profil Kabupaten Tulungagung
+            </p>
+        </div>
     </footer>
 
 </body>
