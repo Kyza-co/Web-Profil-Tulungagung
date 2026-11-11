@@ -1,6 +1,21 @@
-/* ==================================================
-   RESET
-================================================== */
+:root {
+    --dark: #193d2e;
+    --dark-2: #214b39;
+    --dark-footer: #102d22;
+    --cream: #f7f2e7;
+    --cream-dark: #eee6d5;
+    --white: #ffffff;
+    --gold: #d9a52e;
+    --gold-hover: #e5b33d;
+    --text: #183b2d;
+    --muted: #59655e;
+    --muted-light: #cbd6d0;
+    --border: #e2dac8;
+    --font-heading: Georgia, serif;
+    --radius: 10px;
+    --shadow-sm: 0 8px 25px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
 
 * {
     margin: 0;
@@ -14,14 +29,17 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f7f2e7;
-    color: #183b2d;
+    background-color: var(--cream);
+    color: var(--text);
     line-height: 1.6;
 }
 
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 a {
@@ -29,38 +47,43 @@ a {
     color: inherit;
 }
 
-
-/* ==================================================
-   COLOR VARIABLES
-================================================== */
-
-:root {
-    --dark: #193d2e;
-    --dark-2: #214b39;
-    --cream: #f7f2e7;
-    --cream-dark: #eee6d5;
-    --white: #ffffff;
-    --gold: #d9a52e;
-    --text: #183b2d;
-    --muted: #66736b;
-    --border: #e2dac8;
-}
-
-
-/* ==================================================
-   CONTAINER
-================================================== */
-
+/* Common Layout & Section Styles */
 .container {
     width: min(1180px, 90%);
     margin: auto;
 }
 
+.section {
+    padding: 90px 0;
+    scroll-margin-top: 60px;
+}
 
-/* ==================================================
-   NAVBAR
-================================================== */
+.section-light { background-color: var(--cream); }
+.section-dark { background-color: var(--dark); color: var(--white); }
 
+.section-heading {
+    max-width: 750px;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.heading-light > p:last-child {
+    color: #d4ddd8;
+}
+
+/* Navbar */
 .navbar {
     position: sticky;
     top: 0;
@@ -73,17 +96,16 @@ a {
     max-width: 1080px;
     margin: 0 auto;
     padding: 18px 0;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    font-family: Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 22px;
     font-weight: 700;
-    color: #173f32;
+    color: var(--text);
 }
 
 .nav-menu {
@@ -93,7 +115,6 @@ a {
 }
 
 .nav-menu a {
-    color: #173f32;
     font-size: 14px;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -103,64 +124,46 @@ a {
     color: var(--gold);
 }
 
-
-/* ==================================================
-   HERO
-================================================== */
-
+/* Hero Section */
 .hero {
     background-color: var(--dark);
     color: var(--white);
-
     min-height: 560px;
-
     display: flex;
     align-items: center;
-
     padding: 70px 0;
 }
 
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 0.9fr;
-
     gap: 70px;
     align-items: center;
 }
 
-.hero-text {
-    max-width: 600px;
-}
+.hero-text { max-width: 600px; }
 
 .eyebrow {
     color: var(--gold);
-
     font-size: 11px;
     font-weight: 700;
-
     letter-spacing: 1.8px;
     text-transform: uppercase;
-
     margin-bottom: 14px;
 }
 
 .hero h1 {
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: clamp(44px, 5vw, 68px);
     line-height: 0.98;
-
     margin-bottom: 25px;
 }
 
 .hero-description {
     max-width: 520px;
-
     color: #d9e0db;
-
     font-size: 15px;
     line-height: 1.7;
-
     margin-bottom: 30px;
 }
 
@@ -172,14 +175,10 @@ a {
 
 .button {
     display: inline-block;
-
     padding: 13px 21px;
-
     border-radius: 30px;
-
     font-size: 13px;
     font-weight: 700;
-
     transition: all 0.3s ease;
 }
 
@@ -189,7 +188,7 @@ a {
 }
 
 .button-primary:hover {
-    background-color: #e5b33d;
+    background-color: var(--gold-hover);
     transform: translateY(-2px);
 }
 
@@ -206,144 +205,93 @@ a {
 .hero-image {
     width: 100%;
     height: 360px;
-
     overflow: hidden;
     border-radius: 4px;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.5s ease;
 }
 
 .hero-image:hover img {
     transform: scale(1.03);
 }
 
-
-/* ==================================================
-   SECTION
-================================================== */
-
-.section {
-    padding: 90px 0;
-    scroll-margin-top: 60px;
+/* Shared Card Patterns */
+.stat-card, .history-card, .tourism-card, .food-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
 }
 
-.section-light {
-    background-color: var(--cream);
+.stat-card, .tourism-card, .food-card, .culture-card, .potential-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.section-dark {
-    background-color: var(--dark);
-    color: var(--white);
+.stat-card:hover, .food-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
-.section-heading {
-    max-width: 750px;
-    margin-bottom: 45px;
+.tourism-card:hover, .culture-card:hover, .potential-card:hover {
+    transform: translateY(-5px);
 }
 
-.section-heading h2 {
-    font-family: Georgia, serif;
-
-    font-size: clamp(32px, 4vw, 48px);
-    line-height: 1.1;
-
-    margin-bottom: 15px;
+.tourism-card:hover, .food-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
 }
 
-.section-heading > p:last-child {
-    color: var(--muted);
-
-    font-size: 14px;
-    line-height: 1.7;
+/* Image Zoom Hover Helper */
+.hero-image, .tourism-image, .culture-feature-image, .culture-card-image, .food-image {
+    overflow: hidden;
 }
 
-.heading-light > p:last-child {
-    color: #d4ddd8;
+.tourism-card:hover .tourism-image img,
+.culture-card:hover .culture-card-image img,
+.food-card:hover .food-image img,
+.culture-feature:hover .culture-feature-image img {
+    transform: scale(1.05);
 }
 
-
-/* ==================================================
-   PROFIL
-================================================== */
-
+/* Profil Section */
 .profile-layout {
     display: grid;
     grid-template-columns: 1.25fr 0.75fr;
-
     gap: 70px;
-
     align-items: start;
 }
 
 .profile-text p {
-    color: #536159;
-
+    color: var(--muted);
     font-size: 14px;
     line-height: 1.8;
-
     margin-bottom: 18px;
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
     gap: 15px;
 }
 
 .stat-card {
-    background-color: var(--white);
-
     padding: 24px;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
     min-height: 140px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .stat-card span {
     display: block;
-
     font-size: 10px;
     font-weight: 700;
-
     color: #777;
-
     text-transform: uppercase;
     letter-spacing: 1px;
-
     margin-bottom: 12px;
 }
 
 .stat-card strong {
     display: block;
-
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 24px;
     line-height: 1.05;
-
     color: var(--text);
-
     margin-bottom: 7px;
 }
 
@@ -352,856 +300,374 @@ a {
     color: #777;
 }
 
-
-/* ==================================================
-   SEJARAH
-================================================== */
-
+/* Sejarah Section */
 .history-intro {
     max-width: 850px;
-
-    color: #536159;
-
+    color: var(--muted);
     font-size: 14px;
     line-height: 1.8;
-
     margin-bottom: 45px;
 }
 
 .history-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
     gap: 25px;
-
     margin-bottom: 55px;
 }
 
-.history-card {
-    background-color: var(--white);
-
-    padding: 30px;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
-}
+.history-card { padding: 30px; }
 
 .history-card h3 {
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 24px;
-
     color: var(--dark);
-
     margin-bottom: 15px;
 }
 
 .history-card p {
-    color: #59655e;
-
+    color: var(--muted);
     font-size: 14px;
     line-height: 1.8;
 }
 
-
-/* ==================================================
-   TIMELINE
-================================================== */
-
+/* Timeline */
 .timeline {
     position: relative;
-
     max-width: 850px;
-
     margin: auto;
 }
 
 .timeline::before {
     content: "";
-
     position: absolute;
-
     left: 10px;
     top: 5px;
     bottom: 5px;
-
     width: 2px;
-
     background-color: var(--gold);
 }
 
 .timeline-item {
     position: relative;
-
     padding-left: 45px;
-
     margin-bottom: 35px;
 }
 
-.timeline-item:last-child {
-    margin-bottom: 0;
-}
+.timeline-item:last-child { margin-bottom: 0; }
 
 .timeline-item::before {
     content: "";
-
     position: absolute;
-
     left: 3px;
     top: 5px;
-
     width: 16px;
     height: 16px;
-
     background-color: var(--gold);
-
     border: 4px solid var(--cream);
-
     border-radius: 50%;
 }
 
 .timeline-item span {
     display: block;
-
     color: var(--gold);
-
     font-size: 11px;
     font-weight: 700;
-
     letter-spacing: 1px;
-
     margin-bottom: 5px;
 }
 
 .timeline-item h3 {
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 21px;
-
     margin-bottom: 7px;
 }
 
 .timeline-item p {
-    color: #59655e;
-
+    color: var(--muted);
     font-size: 13px;
     line-height: 1.7;
 }
 
-
-/* ==================================================
-   WISATA
-================================================== */
-
+/* Wisata Section */
 .tourism-grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 25px;
 }
 
-.tourism-card {
-    background-color: var(--white);
-
-    overflow: hidden;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.tourism-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
-}
-
-.tourism-image {
-    height: 260px;
-    overflow: hidden;
-}
-
-.tourism-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.5s ease;
-}
-
-.tourism-card:hover .tourism-image img {
-    transform: scale(1.05);
-}
-
-.tourism-content {
-    padding: 25px;
-}
+.tourism-image { height: 260px; }
+.tourism-content { padding: 25px; }
 
 .tourism-content h3 {
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 24px;
-
     color: var(--dark);
-
     margin-bottom: 10px;
 }
 
 .tourism-content p {
-    color: #59655e;
-
+    color: var(--muted);
     font-size: 13px;
     line-height: 1.7;
 }
 
-
-/* ==================================================
-   BUDAYA
-================================================== */
-
+/* Budaya Section */
 .culture-feature {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 45px;
-
     align-items: center;
-
     margin-bottom: 50px;
 }
 
 .culture-feature-image {
     height: 400px;
-
-    overflow: hidden;
-
-    border-radius: 10px;
-}
-
-.culture-feature-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.5s ease;
-}
-
-.culture-feature:hover img {
-    transform: scale(1.03);
+    border-radius: var(--radius);
 }
 
 .culture-feature-content span {
     display: inline-block;
-
     color: var(--gold);
-
     font-size: 11px;
     font-weight: 700;
-
     text-transform: uppercase;
     letter-spacing: 1px;
-
     margin-bottom: 10px;
 }
 
 .culture-feature-content h3 {
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 38px;
-
     margin-bottom: 15px;
 }
 
 .culture-feature-content p {
     color: #d4ddd8;
-
     font-size: 14px;
     line-height: 1.8;
 }
 
 .culture-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 20px;
 }
 
 .culture-card {
     background-color: var(--dark-2);
-
     overflow: hidden;
-
-    border-radius: 10px;
-
+    border-radius: var(--radius);
     border: 1px solid rgba(255, 255, 255, 0.08);
-
-    transition: transform 0.3s ease,
-                background-color 0.3s ease;
 }
 
-.culture-card:hover {
-    transform: translateY(-5px);
-
-    background-color: #285441;
-}
-
-.culture-card-image {
-    height: 210px;
-    overflow: hidden;
-}
-
-.culture-card-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.5s ease;
-}
-
-.culture-card:hover .culture-card-image img {
-    transform: scale(1.05);
-}
-
-.culture-card-content {
-    padding: 20px;
-}
+.culture-card:hover { background-color: #285441; }
+.culture-card-image { height: 210px; }
+.culture-card-content { padding: 20px; }
 
 .culture-card-content h4 {
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 21px;
-
     color: var(--white);
-
     margin-bottom: 8px;
 }
 
 .culture-card-content p {
-    color: #cbd6d0;
-
+    color: var(--muted-light);
     font-size: 12px;
     line-height: 1.7;
 }
 
-
-/* ==================================================
-   KULINER
-================================================== */
-
+/* Kuliner Section */
 .food-grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 25px;
 }
 
 .food-card {
     display: grid;
-
     grid-template-columns: 180px 1fr;
-
-    background-color: var(--white);
-
-    overflow: hidden;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.food-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-}
-
-.food-image {
-    min-height: 210px;
     overflow: hidden;
 }
 
-.food-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.5s ease;
-}
-
-.food-card:hover .food-image img {
-    transform: scale(1.05);
-}
+.food-image { min-height: 210px; }
 
 .food-content {
     padding: 25px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .food-content h3 {
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 23px;
-
     color: var(--dark);
-
     margin-bottom: 10px;
 }
 
 .food-content p {
-    color: #59655e;
-
+    color: var(--muted);
     font-size: 12px;
     line-height: 1.7;
 }
 
-
-/* ==================================================
-   POTENSI DAERAH
-================================================== */
-
+/* Potensi Section */
 .potential-grid {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 18px;
 }
 
 .potential-card {
     background-color: var(--dark);
-
     color: var(--white);
-
     padding: 30px 22px;
-
     min-height: 230px;
-
-    border-radius: 10px;
-
+    border-radius: var(--radius);
     border: 1px solid rgba(255, 255, 255, 0.08);
-
-    transition: transform 0.3s ease,
-                background-color 0.3s ease;
 }
 
-.potential-card:hover {
-    transform: translateY(-5px);
-
-    background-color: var(--dark-2);
-}
+.potential-card:hover { background-color: var(--dark-2); }
 
 .potential-number {
     display: block;
-
     color: var(--gold);
-
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 32px;
-
     margin-bottom: 30px;
 }
 
 .potential-card h3 {
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 21px;
-
     margin-bottom: 10px;
 }
 
 .potential-card p {
     color: #ccd6d1;
-
     font-size: 12px;
     line-height: 1.7;
 }
 
-
-/* ==================================================
-   FOOTER
-================================================== */
-
+/* Footer */
 .footer {
-    background-color: #102d22;
-
+    background-color: var(--dark-footer);
     color: var(--white);
-
     padding: 65px 0 25px;
 }
 
 .footer-grid {
     display: grid;
-
     grid-template-columns: 1.4fr 0.8fr 0.8fr;
-
     gap: 60px;
-
     padding-bottom: 45px;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-brand h3 {
-    font-family: Georgia, serif;
-
+    font-family: var(--font-heading);
     font-size: 28px;
-
     margin-bottom: 15px;
 }
 
 .footer-brand p {
     max-width: 430px;
-
     color: #bfcac4;
-
     font-size: 13px;
     line-height: 1.8;
 }
 
 .footer-column h4 {
     font-size: 13px;
-
     text-transform: uppercase;
     letter-spacing: 1px;
-
     color: var(--gold);
-
     margin-bottom: 18px;
 }
 
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column li {
-    margin-bottom: 10px;
-}
+.footer-column ul { list-style: none; }
+.footer-column li { margin-bottom: 10px; }
 
 .footer-column a {
     color: #c8d1cc;
-
     font-size: 13px;
-
     transition: color 0.3s ease;
 }
 
-.footer-column a:hover {
-    color: var(--gold);
-}
+.footer-column a:hover { color: var(--gold); }
 
 .footer-bottom {
     padding-top: 22px;
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 20px;
 }
 
 .footer-bottom p {
     color: #9eaaa4;
-
     font-size: 11px;
 }
 
-
-/* ==================================================
-   RESPONSIVE TABLET
-================================================== */
-
+/* Media Queries (Responsive) */
 @media (max-width: 900px) {
-
-    .nav-container {
-        width: 90%;
-    }
-
-    .nav-menu {
-        gap: 18px;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-    .hero {
-        padding: 60px 0;
-    }
-
-    .hero-text {
-        max-width: 700px;
-    }
-
-    .hero-image {
-        height: 320px;
-    }
-
-    .profile-layout {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-    .culture-feature {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-    }
-
-    .culture-feature-image {
-        height: 350px;
-    }
-
-    .culture-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .food-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .potential-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-
-        gap: 40px;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
+    .nav-container { width: 90%; }
+    .nav-menu { gap: 18px; }
+    .hero { padding: 60px 0; }
+    .hero-content { grid-template-columns: 1fr; gap: 40px; }
+    .hero-text { max-width: 700px; }
+    .hero-image { height: 320px; }
+    .profile-layout, .culture-feature { grid-template-columns: 1fr; gap: 30px; }
+    .culture-feature-image { height: 350px; }
+    .culture-grid, .potential-grid { grid-template-columns: repeat(2, 1fr); }
+    .food-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: 1 / -1; }
 }
-
-
-/* ==================================================
-   RESPONSIVE MOBILE
-================================================== */
 
 @media (max-width: 650px) {
+    .section { padding: 65px 0; }
+    .nav-container { flex-direction: column; gap: 15px; padding: 15px 0; }
+    .nav-menu { width: 100%; justify-content: center; flex-wrap: wrap; gap: 10px 16px; }
+    .nav-menu a { font-size: 12px; }
+    
+    .hero { min-height: auto; }
+    .hero h1 { font-size: 46px; }
+    .hero-description { font-size: 14px; }
+    .hero-buttons { flex-wrap: wrap; }
+    .hero-image { height: 260px; }
 
-    .section {
-        padding: 65px 0;
-    }
+    .section-heading { margin-bottom: 35px; }
+    .section-heading h2 { font-size: 34px; }
 
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-card { padding: 18px; min-height: 125px; }
 
-    /* NAVBAR */
+    .history-cards, .tourism-grid, .culture-grid, .potential-grid { grid-template-columns: 1fr; }
+    .history-cards { gap: 18px; }
+    .history-card { padding: 23px; }
+    .tourism-image { height: 230px; }
 
-    .nav-container {
-        flex-direction: column;
+    .culture-feature-image { height: 270px; }
+    .culture-feature-content h3 { font-size: 32px; }
 
-        gap: 15px;
+    .food-card { grid-template-columns: 1fr; }
+    .food-image { height: 220px; min-height: 0; }
 
-        padding: 15px 0;
-    }
-
-    .nav-menu {
-        width: 100%;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-
-        gap: 10px 16px;
-    }
-
-    .nav-menu a {
-        font-size: 12px;
-    }
-
-
-    /* HERO */
-
-    .hero {
-        min-height: auto;
-
-        padding: 60px 0;
-    }
-
-    .hero h1 {
-        font-size: 46px;
-    }
-
-    .hero-description {
-        font-size: 14px;
-    }
-
-    .hero-buttons {
-        flex-wrap: wrap;
-    }
-
-    .hero-image {
-        height: 260px;
-    }
-
-
-    /* SECTION HEADING */
-
-    .section-heading {
-        margin-bottom: 35px;
-    }
-
-    .section-heading h2 {
-        font-size: 34px;
-    }
-
-
-    /* PROFIL */
-
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .stat-card {
-        padding: 18px;
-
-        min-height: 125px;
-    }
-
-
-    /* SEJARAH */
-
-    .history-cards {
-        grid-template-columns: 1fr;
-
-        gap: 18px;
-    }
-
-    .history-card {
-        padding: 23px;
-    }
-
-
-    /* WISATA */
-
-    .tourism-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tourism-image {
-        height: 230px;
-    }
-
-
-    /* BUDAYA */
-
-    .culture-feature-image {
-        height: 270px;
-    }
-
-    .culture-feature-content h3 {
-        font-size: 32px;
-    }
-
-    .culture-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* KULINER */
-
-    .food-card {
-        grid-template-columns: 1fr;
-    }
-
-    .food-image {
-        height: 220px;
-
-        min-height: 0;
-    }
-
-
-    /* POTENSI */
-
-    .potential-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* FOOTER */
-
-    .footer {
-        padding-top: 50px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-    }
-
-    .footer-brand {
-        grid-column: auto;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
+    .footer { padding-top: 50px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer-brand { grid-column: auto; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 
-
-/* ==================================================
-   SMALL MOBILE
-================================================== */
-
 @media (max-width: 420px) {
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .button {
-        text-align: center;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .timeline-item {
-        padding-left: 35px;
-    }
-
-    .timeline::before {
-        left: 8px;
-    }
-
-    .timeline-item::before {
-        left: 1px;
-    }
+    .hero h1 { font-size: 40px; }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
+    .button { text-align: center; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .timeline-item { padding-left: 35px; }
+    .timeline::before { left: 8px; }
+    .timeline-item::before { left: 1px; }
 }
